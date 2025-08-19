@@ -28,7 +28,7 @@ export interface ValidationRule {
     },
   ],
   templateUrl: './ngx-smart-password.component.html',
-  styleUrl: './ngx-smart-password.component.css',
+  styleUrl: './ngx-smart-password.component.scss',
 })
 export class NgxSmartPasswordComponent {
   passwordVisible = false;

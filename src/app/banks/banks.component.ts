@@ -14,6 +14,7 @@ import {
   TableAction,
   NgxSmartInputComponent,
   NgxSmartNumberInputComponent,
+  NgxSmartFileUploaderComponent,
 } from 'ngx-dashboard-kit';
 
 @Component({
@@ -27,6 +28,7 @@ import {
     NgxSmartInputComponent,
     NgxSmartNumberInputComponent,
     ReactiveFormsModule,
+    NgxSmartFileUploaderComponent,
   ],
   templateUrl: './banks.component.html',
   styleUrls: ['./banks.component.scss'],

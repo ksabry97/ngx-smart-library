@@ -8,6 +8,7 @@ import {
 import { Subject, takeUntil } from 'rxjs';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { CommonModule } from '@angular/common';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 export interface ValidationRule {
   type: 'required' | 'minLength' | 'maxLength' | 'pattern' | 'email' | 'custom';
   value?: any;
@@ -17,7 +18,12 @@ export interface ValidationRule {
 @Component({
   selector: 'lib-ngx-smart-date-picker',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, NzDatePickerModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    NzDatePickerModule,
+    NzIconModule,
+  ],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -26,7 +32,7 @@ export interface ValidationRule {
     },
   ],
   templateUrl: './ngx-smart-date-picker.component.html',
-  styleUrl: './ngx-smart-date-picker.component.css',
+  styleUrl: './ngx-smart-date-picker.component.scss',
 })
 export class NgxSmartDatePickerComponent {
   @Input() label: string = '';
@@ -45,7 +51,6 @@ export class NgxSmartDatePickerComponent {
   @Input() prefix: string = '';
   @Input() mode: 'date' | 'week' | 'month' | 'quarter' | 'year' = 'date';
   @Input() allowClear: boolean = false;
-  @Input() disabledDate: string = '';
   @Input() showTime: boolean = false;
   @Input() dateFormat: string = '';
   formControl = new FormControl();

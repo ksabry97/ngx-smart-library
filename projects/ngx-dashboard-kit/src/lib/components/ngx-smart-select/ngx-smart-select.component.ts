@@ -30,7 +30,7 @@ interface SmartOption {
     },
   ],
   templateUrl: './ngx-smart-select.component.html',
-  styleUrl: './ngx-smart-select.component.css',
+  styleUrl: './ngx-smart-select.component.scss',
 })
 export class NgxSmartSelectComponent {
   @Input() label: string = '';

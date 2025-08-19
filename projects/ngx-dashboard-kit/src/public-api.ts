@@ -7,3 +7,7 @@ export * from './lib/ngx-dashboard-kit.component';
 export * from './lib/components/ngx-smart-table';
 export * from './lib/components/ngx-smart-input';
 export * from './lib/components/ngx-smart-number-input';
+export * from './lib/components/ngx-smart-date-picker';
+export * from './lib/components/ngx-smart-file-uploader';
+export * from './lib/components/ngx-smart-select';
+export * from './lib/components/ngx-smart-password';
