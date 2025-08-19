@@ -3,21 +3,19 @@
     {{ label }}
   </label>
 
-  <div class="input-wrapper">
+  <form [formGroup]="parentGroup" class="input-wrapper">
     <!-- Text Input -->
     <input
       nz-input
-      [formControl]="formControl"
+      [formControlName]="controlName"
       [placeholder]="placeholder"
       [disabled]="disabled"
       [readonly]="readonly"
-      [maxlength]="maxLength"
-      [minlength]="minLength"
-      (blur)="onInputBlur()"
-      (focus)="onInputFocus()"
+      [attr.maxlength]="maxLength"
+      [attr.minlength]="minLength"
       [class.has-icon]="showIcon"
       [type]="type"
-      [nzStatus]="formControl.touched && formControl.invalid ? 'error' : ''"
+      [nzStatus]="control.touched && control.invalid ? 'error' : ''"
     />
     <button
       *ngIf="showClear"
@@ -29,7 +27,7 @@
     >
       <i nz-icon nzType="close" nzTheme="outline"></i>
     </button>
-  </div>
+  </form>
 
   <!-- Error Message -->
   <div *ngIf="errorMessage" class="error-message">

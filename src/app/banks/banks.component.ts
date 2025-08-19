@@ -13,11 +13,14 @@ import {
   NgxSmartTableComponent,
   TableColumn,
   TableAction,
-  NgxSmartInputComponent,
   NgxSmartNumberInputComponent,
   NgxSmartFileUploaderComponent,
+  NgxSmartPasswordComponent,
+  NgxSmartDatePickerComponent,
+  NgxSmartSelectComponent,
 } from 'ngx-dashboard-kit';
 import { NgxSmartSearchComponent } from '../../../projects/ngx-dashboard-kit/src/lib/components/ngx-smart-search/ngx-smart-search.component';
+import { NgxSmartInputComponent } from '../../../projects/ngx-dashboard-kit/src/lib/components/ngx-smart-input/ngx-smart-input.component';
 
 @Component({
   selector: 'app-banks',
@@ -33,6 +36,9 @@ import { NgxSmartSearchComponent } from '../../../projects/ngx-dashboard-kit/src
     NgxSmartFileUploaderComponent,
     NgxSmartSearchComponent,
     FormsModule,
+    NgxSmartPasswordComponent,
+    NgxSmartDatePickerComponent,
+    NgxSmartSelectComponent,
   ],
   templateUrl: './banks.component.html',
   styleUrls: ['./banks.component.scss'],
@@ -148,14 +154,19 @@ export class BanksComponent {
   }
 
   submitForm() {
-    if (this.testForm.valid) {
-      console.log(this.testForm.value, this.ageModel);
-    } else {
-      this.testForm.markAllAsTouched();
-    }
+    console.log(this.testForm.controls['name'].invalid, 'validation');
+    console.log(this.testForm.value, this.ageModel);
   }
   searchText = '';
-  submitSearch(event: string | any) {
-    console.log(event, 'wwwwwwwwwwww');
-  }
+  genders = [
+    {
+      text: 'Male',
+      value: '1',
+    },
+    {
+      text: 'Female',
+      value: '2',
+    },
+  ];
+  submitSearch(event: string | any) {}
 }

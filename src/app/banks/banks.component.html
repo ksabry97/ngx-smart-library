@@ -73,18 +73,37 @@
   ></lib-ngx-smart-table>
 </div> -->
 
-<!-- <form [formGroup]="testForm">
+<form [formGroup]="testForm">
   <lib-ngx-smart-input
-    label="Age"
+    label="name"
     placeholder="Enter your age"
     [showClear]="true"
-    formControlName="name"
+    [parentGroup]="testForm"
+    [controlName]="'name'"
   ></lib-ngx-smart-input>
+  <lib-ngx-smart-password
+    label="password"
+    placeholder="Enter password"
+    [parentGroup]="testForm"
+    [controlName]="'password'"
+  >
+  </lib-ngx-smart-password>
   <lib-ngx-smart-file-uploader
     label="upload image"
   ></lib-ngx-smart-file-uploader>
+  <lib-ngx-smart-date-picker
+    label="date"
+    placeholder="Enter your birthday"
+    formControlName="date"
+  ></lib-ngx-smart-date-picker>
+  <lib-ngx-smart-select
+    label="Gender"
+    placeholder="choose gender"
+    formControlName="gender"
+    [options]="genders"
+  ></lib-ngx-smart-select>
   <button (click)="submitForm()" class="mt-2">Submit</button>
-</form> -->
+</form>
 
 <lib-ngx-smart-search
   [(ngModel)]="searchText"
