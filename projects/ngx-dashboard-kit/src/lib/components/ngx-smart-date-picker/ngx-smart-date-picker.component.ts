@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, forwardRef, Input } from '@angular/core';
 import {
   FormControl,
@@ -6,33 +5,30 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { NzSelectModule } from 'ng-zorro-antd/select';
 import { Subject, takeUntil } from 'rxjs';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { CommonModule } from '@angular/common';
 export interface ValidationRule {
   type: 'required' | 'minLength' | 'maxLength' | 'pattern' | 'email' | 'custom';
   value?: any;
   message: string;
   customValidator?: (value: any) => boolean;
 }
-interface SmartOption {
-  text: string;
-  value: string;
-}
 @Component({
-  selector: 'lib-ngx-smart-select',
+  selector: 'lib-ngx-smart-date-picker',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, NzSelectModule],
+  imports: [CommonModule, ReactiveFormsModule, NzDatePickerModule],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => NgxSmartSelectComponent),
+      useExisting: forwardRef(() => NgxSmartDatePickerComponent),
       multi: true,
     },
   ],
-  templateUrl: './ngx-smart-select.component.html',
-  styleUrl: './ngx-smart-select.component.css',
+  templateUrl: './ngx-smart-date-picker.component.html',
+  styleUrl: './ngx-smart-date-picker.component.css',
 })
-export class NgxSmartSelectComponent {
+export class NgxSmartDatePickerComponent {
   @Input() label: string = '';
   @Input() placeholder: string = '';
   @Input() required: boolean = false;
@@ -47,9 +43,11 @@ export class NgxSmartSelectComponent {
   @Input() icon: string = '';
   @Input() suffix: string = '';
   @Input() prefix: string = '';
-  @Input() options: SmartOption[] = [];
-  @Input() mode: 'multiple' | 'tags' | 'default' = 'default';
+  @Input() mode: 'date' | 'week' | 'month' | 'quarter' | 'year' = 'date';
   @Input() allowClear: boolean = false;
+  @Input() disabledDate: string = '';
+  @Input() showTime: boolean = false;
+  @Input() dateFormat: string = '';
   formControl = new FormControl();
   errorMessage: string = '';
   private destroy$ = new Subject<void>();

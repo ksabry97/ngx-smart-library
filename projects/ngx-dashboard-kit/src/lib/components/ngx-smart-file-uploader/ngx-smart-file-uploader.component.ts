@@ -6,7 +6,10 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzUploadFile, NzUploadModule } from 'ng-zorro-antd/upload';
+
 import { Subject, takeUntil } from 'rxjs';
 export interface ValidationRule {
   type: 'required' | 'minLength' | 'maxLength' | 'pattern' | 'email' | 'custom';
@@ -14,25 +17,29 @@ export interface ValidationRule {
   message: string;
   customValidator?: (value: any) => boolean;
 }
-interface SmartOption {
-  text: string;
-  value: string;
-}
 @Component({
-  selector: 'lib-ngx-smart-select',
+  selector: 'lib-ngx-smart-file-uploader',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, NzSelectModule],
+  imports: [
+    NzButtonModule,
+    NzIconModule,
+    NzUploadModule,
+    CommonModule,
+    ReactiveFormsModule,
+  ],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => NgxSmartSelectComponent),
+      useExisting: forwardRef(() => NgxSmartFileUploaderComponent),
       multi: true,
     },
   ],
-  templateUrl: './ngx-smart-select.component.html',
-  styleUrl: './ngx-smart-select.component.css',
+  templateUrl: './ngx-smart-file-uploader.component.html',
+  styleUrl: './ngx-smart-file-uploader.component.css',
 })
-export class NgxSmartSelectComponent {
+export class NgxSmartFileUploaderComponent {
+  fileList: NzUploadFile[] = [];
+  @Input() uploadUrl: string = '';
   @Input() label: string = '';
   @Input() placeholder: string = '';
   @Input() required: boolean = false;
@@ -47,9 +54,8 @@ export class NgxSmartSelectComponent {
   @Input() icon: string = '';
   @Input() suffix: string = '';
   @Input() prefix: string = '';
-  @Input() options: SmartOption[] = [];
-  @Input() mode: 'multiple' | 'tags' | 'default' = 'default';
-  @Input() allowClear: boolean = false;
+  @Input() allowMultiple: boolean = false;
+
   formControl = new FormControl();
   errorMessage: string = '';
   private destroy$ = new Subject<void>();
@@ -170,14 +176,5 @@ export class NgxSmartSelectComponent {
     } else {
       this.formControl.enable();
     }
-  }
-
-  onInputBlur() {
-    this.onTouched();
-    this.updateErrorMessage();
-  }
-
-  onInputFocus() {
-    this.formControl.markAsTouched();
   }
 }

@@ -4,20 +4,19 @@
   </label>
 
   <div class="input-wrapper">
-    <nz-select
+    <nz-upload
+      [nzAction]="uploadUrl"
+      [nzFileList]="fileList"
       [formControl]="formControl"
-      [nzPlaceHolder]="placeholder"
       [nzDisabled]="disabled"
+      [nzMultiple]="allowMultiple"
       [nzStatus]="formControl.touched && formControl.invalid ? 'error' : ''"
-      (nzBlur)="onInputBlur()"
-      (nzFocus)="onInputFocus()"
-      [nzMode]="mode"
-      [nzAllowClear]="allowClear"
     >
-      @for (option of options; track $index) {
-      <nz-option [nzValue]="option.value" [nzLabel]="option.text"></nz-option>
-      }
-    </nz-select>
+      <button nz-button>
+        <nz-icon nzType="upload" />
+        Upload
+      </button>
+    </nz-upload>
   </div>
 
   <!-- Error Message -->

@@ -4,7 +4,7 @@
   </label>
 
   <div class="input-wrapper">
-    <nz-select
+    <nz-date-picker
       [formControl]="formControl"
       [nzPlaceHolder]="placeholder"
       [nzDisabled]="disabled"
@@ -13,11 +13,11 @@
       (nzFocus)="onInputFocus()"
       [nzMode]="mode"
       [nzAllowClear]="allowClear"
-    >
-      @for (option of options; track $index) {
-      <nz-option [nzValue]="option.value" [nzLabel]="option.text"></nz-option>
-      }
-    </nz-select>
+      [nzDisabledDate]="disabledDate"
+      [nzInputReadOnly]="readonly"
+      [nzFormat]="dateFormat"
+      [nzShowTime]="showTime"
+    ></nz-date-picker>
   </div>
 
   <!-- Error Message -->
