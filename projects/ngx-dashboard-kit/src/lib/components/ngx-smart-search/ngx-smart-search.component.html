@@ -1,0 +1,11 @@
+<div class="search-container">
+  <input
+    type="text"
+    [formControl]="formControl"
+    [placeholder]="placeholder"
+    [disabled]="disabled"
+    (blur)="onInputBlur()"
+    (focus)="onInputFocus()"
+  />
+  <i nz-icon nzType="search" nzTheme="outline"></i>
+</div>

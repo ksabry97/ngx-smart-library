@@ -11,3 +11,4 @@ export * from './lib/components/ngx-smart-date-picker';
 export * from './lib/components/ngx-smart-file-uploader';
 export * from './lib/components/ngx-smart-select';
 export * from './lib/components/ngx-smart-password';
+export * from './lib/components/ngx-smart-search';

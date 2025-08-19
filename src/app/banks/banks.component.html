@@ -73,7 +73,7 @@
   ></lib-ngx-smart-table>
 </div> -->
 
-<form [formGroup]="testForm">
+<!-- <form [formGroup]="testForm">
   <lib-ngx-smart-input
     label="Age"
     placeholder="Enter your age"
@@ -84,4 +84,9 @@
     label="upload image"
   ></lib-ngx-smart-file-uploader>
   <button (click)="submitForm()" class="mt-2">Submit</button>
-</form>
+</form> -->
+
+<lib-ngx-smart-search
+  [(ngModel)]="searchText"
+  (ngModelChange)="submitSearch($event)"
+></lib-ngx-smart-search>

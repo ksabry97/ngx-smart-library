@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
+  FormsModule,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
@@ -16,6 +17,7 @@ import {
   NgxSmartNumberInputComponent,
   NgxSmartFileUploaderComponent,
 } from 'ngx-dashboard-kit';
+import { NgxSmartSearchComponent } from '../../../projects/ngx-dashboard-kit/src/lib/components/ngx-smart-search/ngx-smart-search.component';
 
 @Component({
   selector: 'app-banks',
@@ -29,6 +31,8 @@ import {
     NgxSmartNumberInputComponent,
     ReactiveFormsModule,
     NgxSmartFileUploaderComponent,
+    NgxSmartSearchComponent,
+    FormsModule,
   ],
   templateUrl: './banks.component.html',
   styleUrls: ['./banks.component.scss'],
@@ -149,5 +153,9 @@ export class BanksComponent {
     } else {
       this.testForm.markAllAsTouched();
     }
+  }
+  searchText = '';
+  submitSearch(event: string | any) {
+    console.log(event, 'wwwwwwwwwwww');
   }
 }
