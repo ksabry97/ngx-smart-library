@@ -4,25 +4,21 @@
   </label>
 
   <div class="input-wrapper">
-    <input
-      [type]="passwordVisible ? 'text' : 'password'"
-      nz-input
+    <nz-select
       [formControl]="formControl"
       [placeholder]="placeholder"
       [disabled]="disabled"
       [readonly]="readonly"
+      [nzStatus]="formControl.touched && formControl.invalid ? 'error' : ''"
       (blur)="onInputBlur()"
       (focus)="onInputFocus()"
-      [nzStatus]="formControl.touched && formControl.invalid ? 'error' : ''"
-    />
-
-    <span
-      nz-icon
-      class="ant-input-password-icon"
-      [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
-      (click)="passwordVisible = !passwordVisible"
+      [nzMode]="mode"
+      [nzAllowClear]="allowClear"
     >
-    </span>
+      @for (option of options; track $index) {
+      <nz-option [nzValue]="option.value" [nzLabel]="option.text"></nz-option>
+      }
+    </nz-select>
   </div>
 
   <!-- Error Message -->

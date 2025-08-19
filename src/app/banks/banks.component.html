@@ -72,8 +72,14 @@
     (onActionClick)="handleActionClick($event)"
   ></lib-ngx-smart-table>
 </div> -->
-<lib-ngx-smart-number-input
-  label="Email Address"
-  placeholder="Enter your email"
-  [showClear]="true"
-></lib-ngx-smart-number-input>
+
+<form [formGroup]="testForm">
+  <lib-ngx-smart-input
+    label="Age"
+    placeholder="Enter your age"
+    [showClear]="true"
+    formControlName="name"
+  ></lib-ngx-smart-input>
+
+  <button (click)="submitForm()" class="mt-2">Submit</button>
+</form>

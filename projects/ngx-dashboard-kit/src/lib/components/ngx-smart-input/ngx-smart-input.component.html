@@ -3,7 +3,7 @@
     {{ label }}
   </label>
 
-  <div class="input-wrapper" [class.has-error]="errorMessage">
+  <div class="input-wrapper">
     <!-- Text Input -->
     <input
       nz-input
@@ -17,7 +17,7 @@
       (focus)="onInputFocus()"
       [class.has-icon]="showIcon"
       [type]="type"
-      [nzStatus]="control.touched && control.invalid ? 'error' : ''"
+      [nzStatus]="formControl.touched && formControl.invalid ? 'error' : ''"
     />
     <button
       *ngIf="showClear"

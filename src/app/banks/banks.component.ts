@@ -1,5 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import {
@@ -20,6 +26,7 @@ import {
     NgxSmartTableComponent,
     NgxSmartInputComponent,
     NgxSmartNumberInputComponent,
+    ReactiveFormsModule,
   ],
   templateUrl: './banks.component.html',
   styleUrls: ['./banks.component.scss'],
@@ -120,5 +127,25 @@ export class BanksComponent {
   editBank(bank: any): void {
     console.log('Edit bank:', bank);
     // Implement edit logic
+  }
+
+  testForm!: FormGroup;
+  ageModel = 0;
+  constructor(private readonly fb: FormBuilder) {
+    this.testForm = this.fb.group({
+      name: ['', Validators.required],
+      password: ['', Validators.required],
+      date: ['', Validators.required],
+      gender: ['', Validators.required],
+      age: ['', Validators.required],
+    });
+  }
+
+  submitForm() {
+    if (this.testForm.valid) {
+      console.log(this.testForm.value, this.ageModel);
+    } else {
+      this.testForm.markAllAsTouched();
+    }
   }
 }
