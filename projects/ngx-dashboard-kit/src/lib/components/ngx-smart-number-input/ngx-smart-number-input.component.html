@@ -7,17 +7,14 @@
     <!-- Text Input -->
     <input
       nz-input
-      [formControl]="formControl"
+      [formControlName]="controlName"
       [placeholder]="placeholder"
       [disabled]="disabled"
       [readonly]="readonly"
       [maxlength]="maxLength"
       [minlength]="minLength"
-      (blur)="onInputBlur()"
-      (focus)="onInputFocus()"
-      [class.has-icon]="showIcon"
       type="number"
-      [nzStatus]="formControl.touched && formControl.invalid ? 'error' : ''"
+      [nzStatus]="control.touched && control.invalid ? 'error' : ''"
     />
     <button
       *ngIf="showClear"
