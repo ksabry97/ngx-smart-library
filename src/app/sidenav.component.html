@@ -1,0 +1,31 @@
+<nav class="custom-sidenav">
+    <ul>
+      <li *ngFor="let item of menuItems"
+          [class.active]="item.route === activeRoute"
+          [class.has-children]="item.children"
+          (click)="!item.children && setActive(item.route)">
+          
+        <div class="menu-item">
+          <i class="pi" [class]="item.icon"></i>
+          <span>{{ item.label }}</span>
+  
+          <i *ngIf="item.children"
+             class="pi chevron-icon"
+             [class.pi-chevron-down]="expandedItems.has(item.route)"
+             [class.pi-chevron-right]="!expandedItems.has(item.route)"
+             (click)="toggleExpand(item.route); $event.stopPropagation()">
+          </i>
+        </div>
+  
+        <ul *ngIf="item.children && expandedItems.has(item.route)">
+          <li *ngFor="let child of item.children"
+              [class.active]="child.route === activeRoute"
+              (click)="setActive(child.route); $event.stopPropagation()">
+            <i class="pi" [class]="child.icon"></i>
+            <span>{{ child.label }}</span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  

@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-header">
+    <div class="font-bold text-lg"><i class="pi pi-users" style="color:#2563eb"></i> Top Performing Merchants</div>
+    <button class="btn btn-light">Manage Merchants</button>
+  </div>
+  <ul class="merchant-list">
+    <li *ngFor="let merchant of merchants; let i = index">
+      <span class="merchant-rank" [style.background]="'#2563eb33'">{{ i + 1 }}</span>
+      <div class="merchant-info">
+        <div class="merchant-name">{{ merchant.name }}</div>
+        <div class="merchant-bank">{{ merchant.bank }} • {{ merchant.txns }} txns</div>
+      </div>
+      <div class="merchant-value">{{ merchant.value }}</div>
+    </li>
+  </ul>
+</div> 

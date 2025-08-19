@@ -1,0 +1,115 @@
+/* Minimal custom styles for header component */
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.top-0 {
+  top: 0;
+}
+.right-0 {
+  right: 0;
+}
+.bg-red-500 {
+  background-color: #ef4444;
+}
+.bg-blue-300 {
+  background-color: #60a5fa;
+}
+.bg-blue-400 {
+  background-color: #60a5fa;
+}
+.text-white {
+  color: #fff;
+}
+.text-xs {
+  font-size: 0.75rem;
+}
+.rounded-full {
+  border-radius: 9999px;
+}
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+.font-bold {
+  font-weight: bold;
+}
+.font-medium {
+  font-weight: 500;
+}
+.text-lg {
+  font-size: 1.125rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+}
+.text-gray-500 {
+  color: #6b7280;
+}
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+.flex {
+  display: flex;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  margin-left: 0.5rem;
+}
+.space-x-3 > :not([hidden]) ~ :not([hidden]) {
+  margin-left: 0.75rem;
+}
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  margin-left: 1rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.border-b {
+  border-bottom: 1px solid #e5e7eb;
+}
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+.bg-white {
+  background-color: #fff;
+}
+.w-10 {
+  width: 2.5rem;
+}
+.h-10 {
+  height: 2.5rem;
+}
+.w-8 {
+  width: 2rem;
+}
+.h-8 {
+  height: 2rem;
+}
+.flex-col {
+  flex-direction: column;
+} 
+.lang-dropdown{
+  button{
+    gap: 10px;
+    border: none;
+  }
+}
+.top-bar, :host > div:first-child, .flex.px-4.py-2.border-b.shadow-sm.bg-white {
+  box-shadow: 0 2px 12px 0 rgba(80, 63, 205, 0.08);
+  z-index: 10;
+}

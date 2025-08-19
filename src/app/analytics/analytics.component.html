@@ -1,0 +1,141 @@
+<div class="analytics-header">
+  <div>
+    <h1>Business Intelligence</h1>
+    <p>Strategic insights and market analysis for informed decision making</p>
+  </div>
+  <button class="global-view-btn"><i class="pi pi-globe"></i> Global View</button>
+</div>
+<div class="analytics-cards-row">
+  <div class="analytics-card card-green">
+    <div class="card-icon"><i class="pi pi-dollar"></i></div>
+    <div class="card-title">Total Revenue</div>
+    <div class="card-value">$8.2M</div>
+    <div class="card-sub">Monthly recurring revenue</div>
+    <div class="card-growth growth-up"><i class="pi pi-arrow-up"></i> +18.5% <span>vs last period</span></div>
+  </div>
+  <div class="analytics-card card-purple">
+    <div class="card-icon"><i class="pi pi-chart-line"></i></div>
+    <div class="card-title">Market Share</div>
+    <div class="card-value">34.2%</div>
+    <div class="card-sub">Regional market position</div>
+    <div class="card-growth growth-up"><i class="pi pi-arrow-up"></i> +2.1% <span>vs last period</span></div>
+  </div>
+  <div class="analytics-card card-blue">
+    <div class="card-icon"><i class="pi pi-users"></i></div>
+    <div class="card-title">Customer Acquisition</div>
+    <div class="card-value">1,247</div>
+    <div class="card-sub">New merchants this month</div>
+    <div class="card-growth growth-up"><i class="pi pi-arrow-up"></i> +12.8% <span>vs last period</span></div>
+  </div>
+  <div class="analytics-card card-yellow">
+    <div class="card-icon"><i class="pi pi-building"></i></div>
+    <div class="card-title">Partner Banks</div>
+    <div class="card-value">28</div>
+    <div class="card-sub">Active banking partnerships</div>
+    <div class="card-growth growth-up"><i class="pi pi-arrow-up"></i> +3 <span>vs last period</span></div>
+  </div>
+</div>
+
+<!-- New analytics section: Revenue Distribution & Payment Method Trends -->
+<div class="analytics-details-row">
+  <div class="analytics-detail-card">
+    <div class="detail-title">Revenue Distribution by Region</div>
+    <div class="detail-sub">Geographic revenue breakdown with growth rates</div>
+    <ul class="region-list">
+      <li>
+        <span class="region-dot"></span> <span class="region-name">Middle East</span>
+        <span class="region-value">45%</span>
+        <span class="region-growth up"><i class="pi pi-chart-line"></i> +12%</span>
+      </li>
+      <li>
+        <span class="region-dot"></span> <span class="region-name">North Africa</span>
+        <span class="region-value">30%</span>
+        <span class="region-growth up"><i class="pi pi-chart-line"></i> +8%</span>
+      </li>
+      <li>
+        <span class="region-dot"></span> <span class="region-name">Europe</span>
+        <span class="region-value">15%</span>
+        <span class="region-growth down"><i class="pi pi-arrow-down"></i> -2%</span>
+      </li>
+      <li>
+        <span class="region-dot"></span> <span class="region-name">Asia</span>
+        <span class="region-value">10%</span>
+        <span class="region-growth up"><i class="pi pi-chart-line"></i> +25%</span>
+      </li>
+    </ul>
+  </div>
+  <div class="analytics-detail-card">
+    <div class="detail-title">Payment Method Trends</div>
+    <div class="detail-sub">Evolution of payment preferences over time</div>
+    <div class="trend-table-title">Payment method trends over time</div>
+    <ps-table [columns]="paymentTrendsColumns" [data]="paymentTrends" class="banks-table"></ps-table>
+  </div>
+</div>
+
+<!-- Merchant Category Performance Section -->
+<div class="merchant-category-section">
+  <div class="section-title">Merchant Category Performance</div>
+  <div class="section-sub">Revenue and growth analysis by business category</div>
+  <div class="merchant-category-cards">
+    <div class="merchant-category-card" *ngFor="let cat of merchantCategories">
+      <div class="cat-header">
+        <span class="cat-name">{{ cat.name }}</span>
+        <span class="cat-growth" [class]="cat.growthType">
+          <i class="pi pi-chart-line"></i> {{ cat.growth }}
+        </span>
+      </div>
+      <div class="cat-label">Revenue</div>
+      <div class="cat-revenue">{{ cat.revenue }}</div>
+      <div class="cat-label">Merchants</div>
+      <div class="cat-merchants">{{ cat.merchants }}</div>
+    </div>
+  </div>
+</div>
+
+<!-- Lower Analytics Cards Row -->
+<div class="analytics-lower-row">
+  <div class="analytics-lower-card market-position-card">
+    <div class="lower-title">Market Position</div>
+    <div class="lower-sub">Competitive landscape analysis</div>
+    <div class="market-row">
+      <span class="market-label">Market Leader</span>
+      <span class="market-chip leader">{{ marketPosition.leader.name }} - {{ marketPosition.leader.value }}</span>
+    </div>
+    <div class="market-row">
+      <span class="market-label">Our Position</span>
+      <span class="market-chip our">{{ marketPosition.our.name }} - {{ marketPosition.our.value }}</span>
+    </div>
+    <div class="market-row">
+      <span class="market-label">Growth Opportunity</span>
+      <span class="market-chip opportunity">{{ marketPosition.opportunity }}</span>
+    </div>
+  </div>
+  <div class="analytics-lower-card customer-satisfaction-card">
+    <div class="lower-title">Customer Satisfaction</div>
+    <div class="lower-sub">Service quality metrics</div>
+    <div class="satisfaction-row" *ngFor="let item of customerSatisfaction">
+      <div class="satisfaction-label">{{ item.label }}</div>
+      <div class="satisfaction-bar-bg">
+        <div class="satisfaction-bar" [style.width.%]="item.value" [style.background]="item.color"></div>
+      </div>
+      <div class="satisfaction-value">{{ item.value }}%</div>
+    </div>
+  </div>
+  <div class="analytics-lower-card revenue-forecast-card">
+    <div class="lower-title">Revenue Forecast</div>
+    <div class="lower-sub">Projected growth for next quarter</div>
+    <div class="forecast-main">{{ revenueForecast.projected }} <span>Projected {{ revenueForecast.period }} Revenue</span></div>
+    <div class="forecast-row">
+      <span>Conservative</span>
+      <span>{{ revenueForecast.conservative }}</span>
+    </div>
+    <div class="forecast-row expected">
+      <span>Expected</span>
+      <span>{{ revenueForecast.expected }}</span>
+    </div>
+    <div class="forecast-row">
+      <span>Optimistic</span>
+      <span>{{ revenueForecast.optimistic }}</span>
+    </div>
+  </div>
+</div> 

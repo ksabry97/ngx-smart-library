@@ -1,0 +1,49 @@
+.metric-card {
+  background: #fff;
+  border: 1.5px solid #ececec;
+  border-radius: 18px;
+  padding: 1.5rem 2rem 1.2rem 1.5rem;
+  min-width: 240px;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.04);
+  transition: box-shadow 0.2s;
+  color: #3b82f6;
+}
+.metric-card:hover {
+  box-shadow: 0 8px 32px 0 rgba(124, 58, 237, 0.10);
+}
+.metric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.metric-title {
+  color: #888;
+  font-size: 1.08rem;
+  font-weight: 500;
+}
+.metric-icon {
+  font-size: 2.1rem;
+  color: #2563eb;
+}
+.metric-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #222;
+  margin: 0.5rem 0 0.2rem 0;
+}
+.metric-trend {
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.trend-label {
+  color: #888;
+  font-size: 0.95rem;
+  margin-left: 0.2rem;
+} 

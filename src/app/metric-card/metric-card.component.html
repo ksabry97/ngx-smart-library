@@ -1,0 +1,12 @@
+<div class="metric-card">
+  <div class="metric-header">
+    <span class="metric-title">{{ title }}</span>
+    <i class="metric-icon" class="{{icon}}"></i>
+  </div>
+  <div class="metric-value">{{ value }}</div>
+  <div class="metric-trend" style="color: {{trendColor}}">
+    <i class="pi pi-arrow-up" *ngIf="trend.startsWith('+')"></i>
+    <i class="pi pi-arrow-down" *ngIf="trend.startsWith('-')"></i>
+    {{ trend }} <span class="trend-label">{{ trendLabel }}</span>
+  </div>
+</div> 

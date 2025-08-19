@@ -1,0 +1,29 @@
+<table class="ps-table">
+  <thead>
+    <tr>
+      <th *ngFor="let col of columns">{{ col.header }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of data">
+      <td *ngFor="let col of columns">
+        <ng-container *ngIf="col.field === 'actions'; else defaultCell">
+          <div class="action-buttons">
+            <button 
+              *ngFor="let action of actions" 
+              class="action-btn"
+              [class]="action.class"
+              [disabled]="action.disabled"
+              (click)="action.action(row)"
+              [title]="action.label">
+              <i class="pi" [class]="action.icon"></i>
+            </button>
+          </div>
+        </ng-container>
+        <ng-template #defaultCell>
+          {{ row[col.field] }}
+        </ng-template>
+      </td>
+    </tr>
+  </tbody>
+</table> 

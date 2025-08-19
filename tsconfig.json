@@ -11,6 +11,11 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "isolatedModules": true,
+    "paths": {
+      "ngx-dashboard-kit": [
+        "./dist/ngx-dashboard-kit"
+      ]
+    },
     "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,

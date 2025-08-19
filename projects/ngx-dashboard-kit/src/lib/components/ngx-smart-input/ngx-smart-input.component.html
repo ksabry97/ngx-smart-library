@@ -1,0 +1,39 @@
+<div class="ngx-smart-input-container">
+  <label *ngIf="label" class="input-label" [class.required]="required">
+    {{ label }}
+  </label>
+
+  <div class="input-wrapper" [class.has-error]="errorMessage">
+    <!-- Text Input -->
+    <input
+      nz-input
+      [formControl]="formControl"
+      [placeholder]="placeholder"
+      [disabled]="disabled"
+      [readonly]="readonly"
+      [maxlength]="maxLength"
+      [minlength]="minLength"
+      (blur)="onInputBlur()"
+      (focus)="onInputFocus()"
+      [class.has-icon]="showIcon"
+      [type]="type"
+      [nzStatus]="control.touched && control.invalid ? 'error' : ''"
+    />
+    <button
+      *ngIf="showClear"
+      nz-button
+      nzType="text"
+      nzSize="small"
+      class="clear-button"
+      (click)="clearValue()"
+    >
+      <i nz-icon nzType="close" nzTheme="outline"></i>
+    </button>
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="error-message">
+    <i nz-icon nzType="exclamation-circle" nzTheme="outline"></i>
+    {{ errorMessage }}
+  </div>
+</div>

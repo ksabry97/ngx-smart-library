@@ -1,0 +1,28 @@
+.dashboard-page {
+  background: #f5f6fa;
+  min-height: 100vh;
+  padding: 2.5rem 2rem 2rem 2rem;
+}
+
+.metrics-row {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1200px) {
+  .metrics-row, .content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+} 

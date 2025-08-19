@@ -1,13 +1,28 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
+import { filter } from 'rxjs/operators';
+import { CommonModule } from '@angular/common';
+import { SidenavComponent } from "./sidenav.component";
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { HeaderComponent } from './header.component';
+import { RevenueTrendsComponent } from './revenue-trends.component';
+import { DailyTransactionsComponent } from './daily-transactions.component';
+import { MetricCardComponent } from './metric-card/metric-card.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [CommonModule, RouterOutlet, SidenavComponent, NzAvatarModule, NzBadgeModule, HeaderComponent, RevenueTrendsComponent, DailyTransactionsComponent, MetricCardComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ctms-dashboards';
+  showLayout = true;
+  constructor(private router: Router) {
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((event: any) => {
+      // Hide layout for /login and any child routes
+      this.showLayout = !/^\/login($|\/)/.test(event.urlAfterRedirects);
+    });
+  }
 }

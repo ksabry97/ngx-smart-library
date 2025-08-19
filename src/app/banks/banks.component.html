@@ -1,0 +1,79 @@
+<!-- <div class="banks-table-card">
+  <div class="banks-table-header">
+    <div class="header-left">
+      <div class="header-title-icon">
+        <h2>Banks Management</h2>
+      </div>
+      <p>Manage connected banking institutions and their configurations</p>
+    </div>
+    <div class="header-right">
+      <input
+        type="text"
+        pInputText
+        placeholder="Search banks..."
+        style="width: 300px; margin-right: 1rem"
+      />
+      <button
+        pButton
+        icon="pi pi-filter"
+        label="Filters"
+        class="p-button-outlined p-button-sm"
+      ></button>
+    </div>
+  </div>
+
+  <div class="banks-summary-row">
+    <div class="banks-summary-cards">
+      <div class="summary-card">
+        <div class="summary-icon summary-icon-purple">
+          <i class="pi pi-building"></i>
+        </div>
+        <div class="summary-content">
+          <div class="summary-title">Total Banks</div>
+          <div class="summary-value">{{ banks.length }}</div>
+          <div class="summary-sub">Connected institutions</div>
+        </div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-icon summary-icon-green">
+          <i class="pi pi-check-circle"></i>
+        </div>
+        <div class="summary-content">
+          <div class="summary-title">Active Banks</div>
+          <div class="summary-value">{{ activeBanksCount }}</div>
+          <div class="summary-sub">Currently operational</div>
+        </div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-icon summary-icon-blue">
+          <i class="pi pi-credit-card"></i>
+        </div>
+        <div class="summary-content">
+          <div class="summary-title">Total Terminals</div>
+          <div class="summary-value">{{ totalTerminals }}</div>
+          <div class="summary-sub">Across all banks</div>
+        </div>
+      </div>
+    </div>
+    <button
+      pButton
+      class="add-bank-btn"
+      icon="pi pi-plus"
+      label="Add Bank"
+    ></button>
+  </div>
+
+  <lib-ngx-smart-table
+    [columns]="columns"
+    [data]="banks"
+    [actions]="actions"
+    [paginator]="true"
+    [rows]="10"
+    (onActionClick)="handleActionClick($event)"
+  ></lib-ngx-smart-table>
+</div> -->
+<lib-ngx-smart-number-input
+  label="Email Address"
+  placeholder="Enter your email"
+  [showClear]="true"
+></lib-ngx-smart-number-input>

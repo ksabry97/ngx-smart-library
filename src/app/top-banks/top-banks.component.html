@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header">
+    <div class="font-bold text-lg"><i class="pi pi-building" style="color:#2563eb"></i> Top Performing Banks</div>
+    <button class="btn btn-light">Manage Banks</button>
+  </div>
+  <ul class="bank-list">
+    <li *ngFor="let bank of banks; let i = index">
+      <span class="bank-rank" [style.background]="'#2563eb33'">{{ i + 1 }}</span>
+      <div class="bank-info">
+        <div class="bank-name">{{ bank.name }}</div>
+        <div class="bank-txns">{{ bank.txns }} transactions</div>
+      </div>
+      <div class="bank-value">
+        <div class="bank-amount">{{ bank.value }}</div>
+        <div class="bank-trend" style="color:#22c55e">{{ bank.trend }}</div>
+      </div>
+    </li>
+  </ul>
+</div> 

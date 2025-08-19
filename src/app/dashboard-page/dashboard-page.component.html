@@ -1,0 +1,56 @@
+<div>
+  <div class="metrics-row">
+    <app-metric-card
+      title="Revenue"
+      value="₹45.2M"
+      icon="pi pi-dollar"
+      trend="+12.5%"
+      trendColor="#22c55e"
+      class="metric-card"
+    ></app-metric-card>
+    <app-metric-card
+      title="Connected Banks"
+      value="8"
+      icon="pi pi-building"
+      trend="+2 new"
+      trendColor="#22c55e"
+      class="metric-card"
+    ></app-metric-card>
+    <app-metric-card
+      title="Merchants"
+      value="1,284"
+      icon="pi pi-users"
+      trend="+8.2%"
+      trendColor="#22c55e"
+      class="metric-card"
+    ></app-metric-card>
+    <app-metric-card
+      title="Transactions"
+      value="89.4K"
+      icon="pi pi-credit-card"
+      trend="+15.7%"
+      trendColor="#22c55e"
+      class="metric-card"
+    ></app-metric-card>
+    <app-metric-card
+      title="Success Rate"
+      value="98.7%"
+      icon="pi pi-check-circle"
+      trend="+0.3%"
+      trendColor="#22c55e"
+      class="metric-card"
+    ></app-metric-card>
+  </div>
+
+  <!-- Wrap each row with .dashboard-chart for stagger effect -->
+  <div class="dashboard-row dashboard-chart" style="display: flex; gap: 2rem; margin-bottom: 2.5rem;">
+    <app-transaction-channels style="flex:1"></app-transaction-channels>
+    <app-top-banks style="flex:1"></app-top-banks>
+    <app-top-merchants style="flex:1"></app-top-merchants>
+  </div>
+
+  <div class="content dashboard-chart" style="display: flex; gap: 2rem;">
+    <app-revenue-trends style="flex:1;"></app-revenue-trends>
+    <app-daily-transactions style="flex:1;"></app-daily-transactions>
+  </div>
+</div>
