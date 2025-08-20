@@ -7,7 +7,7 @@
     <nz-upload
       [nzAction]="uploadUrl"
       [nzFileList]="fileList"
-     [formControlName]="controlName"
+      [formControlName]="controlName"
       [nzDisabled]="disabled"
       [nzMultiple]="allowMultiple"
     >
@@ -16,7 +16,7 @@
         Upload
       </button>
     </nz-upload>
-  </div>
+  </form>
 
   <!-- Error Message -->
   <div *ngIf="errorMessage" class="error-message">

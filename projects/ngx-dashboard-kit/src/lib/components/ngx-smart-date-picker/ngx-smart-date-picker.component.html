@@ -5,12 +5,10 @@
 
   <form [formGroup]="parentGroup" class="input-wrapper">
     <nz-date-picker
-      [formControl]="formControl"
+      [formControlName]="controlName"
       [nzPlaceHolder]="placeholder"
       [nzDisabled]="disabled"
-      [nzStatus]="formControl.touched && formControl.invalid ? 'error' : ''"
-      (nzBlur)="onInputBlur()"
-      (nzFocus)="onInputFocus()"
+      [nzStatus]="control.touched && control.invalid ? 'error' : ''"
       [nzMode]="mode"
       [nzAllowClear]="allowClear"
       [nzInputReadOnly]="readonly"
