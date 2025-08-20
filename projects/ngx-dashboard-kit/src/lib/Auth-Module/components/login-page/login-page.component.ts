@@ -10,6 +10,7 @@ import { NgxSmartPasswordComponent } from '../../../components/ngx-smart-passwor
 import { NgxSmartInputComponent } from '../../../components/ngx-smart-input';
 import { matchPasswordValidator } from '../../services/passwordCutsomValidator';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-smart-login-page',
@@ -28,7 +29,10 @@ export class LoginPageComponent {
   activeTab = 0;
   loginForm!: FormGroup;
   registerForm!: FormGroup;
-  constructor(private readonly fb: FormBuilder) {
+  constructor(
+    private readonly fb: FormBuilder,
+    private readonly router: Router
+  ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
@@ -51,6 +55,9 @@ export class LoginPageComponent {
       ?.getError('passwordMismatch');
   }
 
+  login() {
+    this.router.navigateByUrl('/');
+  }
   submitRegisterForm() {
     console.log(this.registerForm, 'ssssss');
   }

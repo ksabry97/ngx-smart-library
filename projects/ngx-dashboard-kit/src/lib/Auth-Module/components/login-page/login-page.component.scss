@@ -2,6 +2,8 @@
 .login-page-container {
   width: 100dvw;
   height: 100dvh;
+  overflow: scroll;
+  overflow-x: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
