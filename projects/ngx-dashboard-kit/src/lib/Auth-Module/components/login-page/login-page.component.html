@@ -1,0 +1,82 @@
+<div class="login-page-container">
+  <div class="box"></div>
+  <h1>Welcome</h1>
+  <div class="form-container">
+    <div class="tablist">
+      <p [ngClass]="{ active: activeTab == 0 }" (click)="activeTab = 0">
+        Sign In
+      </p>
+      <p [ngClass]="{ active: activeTab == 1 }" (click)="activeTab = 1">
+        Create Account
+      </p>
+    </div>
+    <!-- login form -->
+    <form class="login-form" [formGroup]="loginForm" *ngIf="activeTab == 0">
+      <h2>Welcome back</h2>
+      <p>Sign in to your account to continue</p>
+      <lib-ngx-smart-input
+        label="Email"
+        placeholder="Enter your email"
+        [parentGroup]="loginForm"
+        [controlName]="'email'"
+        [required]="true"
+      ></lib-ngx-smart-input>
+      <lib-ngx-smart-password
+        label="password"
+        placeholder="Enter password"
+        [parentGroup]="loginForm"
+        [controlName]="'password'"
+        [required]="true"
+      >
+      </lib-ngx-smart-password>
+      <p class="forget-password">Forget Password ?</p>
+      <button class="primaryButton">Sign In</button>
+    </form>
+    <!-- Register form -->
+    <form class="login-form" [formGroup]="registerForm" *ngIf="activeTab == 1">
+      <h2>Create your account</h2>
+      <p>Get started with your free account</p>
+      <lib-ngx-smart-input
+        label="Full Name"
+        placeholder="Enter your full name"
+        [parentGroup]="registerForm"
+        [controlName]="'name'"
+        [required]="true"
+      ></lib-ngx-smart-input>
+      <lib-ngx-smart-input
+        label="Email"
+        placeholder="Enter your email"
+        [parentGroup]="registerForm"
+        [controlName]="'email'"
+        [required]="true"
+      ></lib-ngx-smart-input>
+      <lib-ngx-smart-password
+        label="password"
+        placeholder="Create a password"
+        [parentGroup]="registerForm"
+        [controlName]="'password'"
+        [required]="true"
+      >
+      </lib-ngx-smart-password>
+      <lib-ngx-smart-password
+        label="Confirm Password"
+        placeholder="Confirm password"
+        [required]="true"
+        [parentGroup]="registerForm"
+        [controlName]="'confirmPassword'"
+      >
+      </lib-ngx-smart-password>
+      <div
+        *ngIf="passwordMismatchError"
+        class="error-message"
+        style="width: 100%"
+      >
+        <i nz-icon nzType="exclamation-circle" nzTheme="outline"></i>
+        passwords don't match
+      </div>
+      <button class="primaryButton" (click)="submitRegisterForm()">
+        Create Account
+      </button>
+    </form>
+  </div>
+</div>

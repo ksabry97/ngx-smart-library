@@ -1,3 +1,10 @@
+p,
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
 .ngx-smart-input-container {
   display: flex;
   flex-direction: column;
@@ -48,4 +55,16 @@
   .input-label {
     font-size: 0.8rem;
   }
+}
+
+.primaryButton {
+  width: 100%;
+  border: none;
+  outline: none;
+  height: 36px;
+  font-size: 14px !important;
+  color: #fff;
+  background-color: #2563eb;
+  cursor: pointer;
+  border-radius: 6px;
 }

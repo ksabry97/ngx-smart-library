@@ -1,7 +1,6 @@
 .main {
   background: #f5f6fa;
   min-height: 100vh;
-  padding: 2.5rem 2rem 2rem 2rem;
   flex-direction: column;
   width: auto;
 }
@@ -22,7 +21,8 @@
 }
 
 @media (max-width: 1200px) {
-  .metrics-row, .content {
+  .metrics-row,
+  .content {
     flex-direction: column;
     gap: 1.5rem;
   }
