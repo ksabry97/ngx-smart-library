@@ -150,6 +150,7 @@ export class BanksComponent {
       date: ['', Validators.required],
       gender: ['', Validators.required],
       age: ['', Validators.required],
+      file: [''],
     });
   }
 

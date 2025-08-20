@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { ErrorMessages } from '../../services/error-messages.service';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 export interface ValidationRule {
   type: 'required' | 'minLength' | 'maxLength' | 'pattern' | 'email' | 'custom';
   value?: any;
@@ -16,7 +17,7 @@ interface SmartOption {
 @Component({
   selector: 'lib-ngx-smart-select',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, NzSelectModule],
+  imports: [CommonModule, ReactiveFormsModule, NzSelectModule, NzIconModule],
   templateUrl: './ngx-smart-select.component.html',
   styleUrl: './ngx-smart-select.component.scss',
 })

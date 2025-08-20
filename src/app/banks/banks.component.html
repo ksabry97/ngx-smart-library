@@ -90,16 +90,20 @@
   </lib-ngx-smart-password>
   <lib-ngx-smart-file-uploader
     label="upload image"
+    [parentGroup]="testForm"
+    [controlName]="'file'"
   ></lib-ngx-smart-file-uploader>
   <lib-ngx-smart-date-picker
     label="date"
     placeholder="Enter your birthday"
-    formControlName="date"
+    [parentGroup]="testForm"
+    [controlName]="'date'"
   ></lib-ngx-smart-date-picker>
   <lib-ngx-smart-select
     label="Gender"
     placeholder="choose gender"
-    formControlName="gender"
+    [parentGroup]="testForm"
+    [controlName]="'gender'"
     [options]="genders"
   ></lib-ngx-smart-select>
   <button (click)="submitForm()" class="mt-2">Submit</button>
