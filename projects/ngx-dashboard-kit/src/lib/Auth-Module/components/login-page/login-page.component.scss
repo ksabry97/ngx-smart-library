@@ -80,3 +80,13 @@
     }
   }
 }
+.backbutton {
+  background-color: transparent;
+  color: #64748b;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    color: #2563eb;
+  }
+}

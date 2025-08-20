@@ -1,6 +1,6 @@
 <div class="login-page-container">
-  <h1>Welcome</h1>
-  <div class="form-container">
+  <h1>{{ isPasswordForgetten ? "Reset Password" : "Welcome" }}</h1>
+  <div class="form-container" *ngIf="!isPasswordForgetten">
     <div class="tablist">
       <p [ngClass]="{ active: activeTab == 0 }" (click)="activeTab = 0">
         Sign In
@@ -28,7 +28,12 @@
         [required]="true"
       >
       </lib-ngx-smart-password>
-      <p class="forget-password">Forget Password ?</p>
+      <p
+        class="forget-password"
+        (click)="isPasswordForgetten = !isPasswordForgetten"
+      >
+        Forget Password ?
+      </p>
       <button class="primaryButton" (click)="login()">Sign In</button>
     </form>
     <!-- Register form -->
@@ -75,6 +80,31 @@
       </div>
       <button class="primaryButton" (click)="submitRegisterForm()">
         Create Account
+      </button>
+    </form>
+  </div>
+  <div class="form-container" *ngIf="isPasswordForgetten">
+    <form class="login-form" [formGroup]="loginForm">
+      <h2>Forgot your password?</h2>
+      <p>
+        No worries! Enter your email address and we'll send you a link to reset
+        your password.
+      </p>
+      <lib-ngx-smart-input
+        label="Email Address"
+        placeholder="Enter your email address"
+        [parentGroup]="loginForm"
+        [controlName]="'email'"
+        [required]="true"
+      ></lib-ngx-smart-input>
+
+      <button class="primaryButton" (click)="login()">Send Reset Link</button>
+      <button
+        class="backbutton"
+        (click)="isPasswordForgetten = !isPasswordForgetten"
+      >
+        <i nz-icon nzType="arrow-left" nzTheme="outline"></i>
+        Back to Login
       </button>
     </form>
   </div>
