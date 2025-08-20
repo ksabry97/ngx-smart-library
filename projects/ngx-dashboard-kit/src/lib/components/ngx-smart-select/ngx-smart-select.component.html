@@ -3,14 +3,12 @@
     {{ label }}
   </label>
 
-  <div class="input-wrapper">
+  <form [formGroup]="parentGroup" class="input-wrapper">
     <nz-select
-      [formControl]="formControl"
+      [formControlName]="controlName"
       [nzPlaceHolder]="placeholder"
       [nzDisabled]="disabled"
-      [nzStatus]="formControl.touched && formControl.invalid ? 'error' : ''"
-      (nzBlur)="onInputBlur()"
-      (nzFocus)="onInputFocus()"
+      [nzStatus]="control.touched && control.invalid ? 'error' : ''"
       [nzMode]="mode"
       [nzAllowClear]="allowClear"
     >
@@ -18,7 +16,7 @@
       <nz-option [nzValue]="option.value" [nzLabel]="option.text"></nz-option>
       }
     </nz-select>
-  </div>
+  </form>
 
   <!-- Error Message -->
   <div *ngIf="errorMessage" class="error-message">

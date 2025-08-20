@@ -3,7 +3,7 @@
     {{ label }}
   </label>
 
-  <div class="input-wrapper">
+  <form [formGroup]="parentGroup" class="input-wrapper">
     <!-- Text Input -->
     <input
       nz-input
@@ -26,7 +26,7 @@
     >
       <i nz-icon nzType="close" nzTheme="outline"></i>
     </button>
-  </div>
+  </form>
 
   <!-- Error Message -->
   <div *ngIf="errorMessage" class="error-message">

@@ -1,17 +1,10 @@
 import { Component, Input, forwardRef, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  ControlValueAccessor,
-  NG_VALUE_ACCESSOR,
-  FormControl,
-  ReactiveFormsModule,
-  Validators,
-  FormGroup,
-} from '@angular/forms';
+import { FormControl, ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { Subject, takeUntil } from 'rxjs';
+
 import { ErrorMessages } from '../../services/error-messages.service';
 
 export interface ValidationRule {

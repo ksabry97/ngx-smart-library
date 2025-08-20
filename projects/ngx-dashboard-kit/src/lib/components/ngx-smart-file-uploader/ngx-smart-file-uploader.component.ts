@@ -1,11 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, forwardRef, Input } from '@angular/core';
-import {
-  FormControl,
-  NG_VALUE_ACCESSOR,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzUploadFile, NzUploadModule } from 'ng-zorro-antd/upload';
@@ -28,13 +23,6 @@ export interface ValidationRule {
     ReactiveFormsModule,
     NzIconModule,
   ],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => NgxSmartFileUploaderComponent),
-      multi: true,
-    },
-  ],
   templateUrl: './ngx-smart-file-uploader.component.html',
   styleUrl: './ngx-smart-file-uploader.component.scss',
 })
@@ -56,7 +44,8 @@ export class NgxSmartFileUploaderComponent {
   @Input() suffix: string = '';
   @Input() prefix: string = '';
   @Input() allowMultiple: boolean = false;
-
+  @Input() parentGroup!: FormGroup;
+  @Input() controlName!: string;
   formControl = new FormControl();
   errorMessage: string = '';
   private destroy$ = new Subject<void>();

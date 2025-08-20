@@ -3,11 +3,11 @@
     {{ label }}
   </label>
 
-  <div class="input-wrapper">
+  <form [formGroup]="parentGroup" class="input-wrapper">
     <nz-upload
       [nzAction]="uploadUrl"
       [nzFileList]="fileList"
-      [formControl]="formControl"
+     [formControlName]="controlName"
       [nzDisabled]="disabled"
       [nzMultiple]="allowMultiple"
     >

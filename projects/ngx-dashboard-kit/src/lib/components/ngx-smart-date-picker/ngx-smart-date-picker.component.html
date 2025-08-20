@@ -3,7 +3,7 @@
     {{ label }}
   </label>
 
-  <div class="input-wrapper">
+  <form [formGroup]="parentGroup" class="input-wrapper">
     <nz-date-picker
       [formControl]="formControl"
       [nzPlaceHolder]="placeholder"
@@ -17,7 +17,7 @@
       [nzFormat]="dateFormat"
       [nzShowTime]="showTime"
     ></nz-date-picker>
-  </div>
+  </form>
 
   <!-- Error Message -->
   <div *ngIf="errorMessage" class="error-message">
