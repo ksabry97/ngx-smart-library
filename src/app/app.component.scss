@@ -1,8 +1,9 @@
 .main {
   background: #f5f6fa;
-  min-height: 100vh;
+  height: 100vh;
   flex-direction: column;
   width: auto;
+  overflow: auto;
 }
 
 .metrics-row {

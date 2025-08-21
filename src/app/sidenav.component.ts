@@ -3,30 +3,34 @@ import { CommonModule } from '@angular/common';
 import { NgClass } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { SmartSideBarComponent } from '../../projects/ngx-dashboard-kit/src/lib/Navigation/components/smart-side-bar/smart-side-bar.component';
 
 @Component({
   selector: 'app-sidenav',
   standalone: true,
-  imports: [CommonModule, NgClass],
+  imports: [CommonModule, NgClass, SmartSideBarComponent],
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.scss']
+  styleUrls: ['./sidenav.component.scss'],
 })
 export class SidenavComponent {
-  router = inject(Router)
+  router = inject(Router);
   menuItems = [
     { label: 'Dashboard', icon: 'pi pi-th-large', route: 'dashboard' },
     { label: 'Analytics', icon: 'pi pi-chart-bar', route: 'analytics' },
     { label: 'Bank Management', icon: 'pi pi-building', route: 'banks' },
     {
-      label: 'Hosts & Routes', icon: 'pi pi-share-alt', route: 'routes', children: [
+      label: 'Hosts & Routes',
+      icon: 'pi pi-share-alt',
+      route: 'routes',
+      children: [
         { label: 'Routes', icon: 'pi pi-directions', route: 'routes' },
-        { label: 'Hosts', icon: 'pi pi-server', route: 'hosts' }
-      ]
+        { label: 'Hosts', icon: 'pi pi-server', route: 'hosts' },
+      ],
     },
     { label: 'Merchant Management', icon: 'pi pi-users', route: 'merchants' },
     { label: 'Terminal Management', icon: 'pi pi-tablet', route: 'terminals' },
     { label: 'Inventory Management', icon: 'pi pi-box', route: 'inventory' },
-    { label: 'Transaction', icon: 'pi pi-credit-card', route: 'transactions' }
+    { label: 'Transaction', icon: 'pi pi-credit-card', route: 'transactions' },
   ];
 
   activeRoute = '';
@@ -35,7 +39,7 @@ export class SidenavComponent {
   constructor() {
     this.setActiveRouteFromUrl(this.router.url);
     this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
+      .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: any) => {
         this.setActiveRouteFromUrl(event.urlAfterRedirects || event.url);
       });
