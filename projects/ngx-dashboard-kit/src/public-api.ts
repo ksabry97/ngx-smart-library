@@ -13,3 +13,4 @@ export * from './lib/components/ngx-smart-select';
 export * from './lib/components/ngx-smart-password';
 export * from './lib/components/ngx-smart-search';
 export * from './lib/Auth-Module/components/login-page';
+export * from './lib/Auth-Module/components/unathourized';
