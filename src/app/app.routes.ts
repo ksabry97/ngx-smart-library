@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { UnathourizedComponent } from '../../projects/ngx-dashboard-kit/src/lib/Auth-Module/components/unathourized/unathourized.component';
 
 export const routes: Routes = [
   {
@@ -25,5 +26,6 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./login.component').then((m) => m.LoginComponent),
   },
+  { path: 'unathourized', component: UnathourizedComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 ];
