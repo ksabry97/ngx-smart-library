@@ -18,6 +18,10 @@ import {
   NgxSmartPasswordComponent,
   NgxSmartDatePickerComponent,
   NgxSmartSelectComponent,
+  ToastMessages,
+  NgxSmartAlertComponent,
+  NgxSmartConfirmationComponent,
+  NgxSmartSpinnerComponent,
 } from 'ngx-dashboard-kit';
 import { NgxSmartSearchComponent } from '../../../projects/ngx-dashboard-kit/src/lib/components/ngx-smart-search/ngx-smart-search.component';
 import { NgxSmartInputComponent } from '../../../projects/ngx-dashboard-kit/src/lib/components/ngx-smart-input/ngx-smart-input.component';
@@ -39,6 +43,9 @@ import { NgxSmartInputComponent } from '../../../projects/ngx-dashboard-kit/src/
     NgxSmartPasswordComponent,
     NgxSmartDatePickerComponent,
     NgxSmartSelectComponent,
+    NgxSmartAlertComponent,
+    NgxSmartConfirmationComponent,
+    NgxSmartSpinnerComponent,
   ],
   templateUrl: './banks.component.html',
   styleUrls: ['./banks.component.scss'],
@@ -143,7 +150,10 @@ export class BanksComponent {
 
   testForm!: FormGroup;
   ageModel = 0;
-  constructor(private readonly fb: FormBuilder) {
+  constructor(
+    private readonly fb: FormBuilder,
+    private readonly msgServ: ToastMessages
+  ) {
     this.testForm = this.fb.group({
       name: ['', Validators.required],
       password: ['', Validators.required],
@@ -155,8 +165,9 @@ export class BanksComponent {
   }
 
   submitForm() {
-    console.log(this.testForm.controls['name'].invalid, 'validation');
-    console.log(this.testForm.value, this.ageModel);
+    // console.log(this.testForm.controls['name'].invalid, 'validation');
+    // console.log(this.testForm.value, this.ageModel);
+    this.msgServ.createToastMsg('loading', 'hey', 1000);
   }
   searchText = '';
   genders = [

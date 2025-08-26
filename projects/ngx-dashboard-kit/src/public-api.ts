@@ -15,3 +15,7 @@ export * from './lib/components/ngx-smart-search';
 export * from './lib/Auth-Module/components/login-page';
 export * from './lib/Auth-Module/components/unathourized';
 export * from './lib/Navigation/components/smart-side-bar';
+export * from './lib/Feedback/ngx-smart-alert';
+export * from './lib/Feedback/ngx-smart-confirmation';
+export * from './lib/Feedback/ngx-smart-spinner';
+export * from './lib/services/toast-messages.service';

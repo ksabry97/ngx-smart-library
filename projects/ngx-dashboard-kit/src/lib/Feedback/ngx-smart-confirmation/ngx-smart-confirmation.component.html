@@ -1,0 +1,11 @@
+<button
+  nz-popconfirm
+  [nzPopconfirmTitle]="confirmTitle"
+  (nzOnConfirm)="confirm()"
+  (nzOnCancel)="cancel()"
+  nz-button
+  [ngClass]="{ 'gap-z': !content }"
+>
+  <i nz-icon [nzType]="icon" nzTheme="outline" *ngIf="icon"></i>
+  {{ content ? content : "" }}
+</button>

@@ -109,6 +109,18 @@
   <button (click)="submitForm()" class="mt-2">Submit</button>
 </form>
 
+<lib-ngx-smart-alert
+  [showIcon]="true"
+  [content]="'asjdwkdkiw'"
+  [alertType]="'success'"
+></lib-ngx-smart-alert>
+
+<lib-ngx-smart-confirmation
+  [icon]="'eye'"
+  [confirmTitle]="'are you sure ?'"
+  (isConfirmed)="submitForm()"
+></lib-ngx-smart-confirmation>
+<!-- <lib-ngx-smart-spinner></lib-ngx-smart-spinner> -->
 <lib-ngx-smart-search
   [(ngModel)]="searchText"
   (ngModelChange)="submitSearch($event)"

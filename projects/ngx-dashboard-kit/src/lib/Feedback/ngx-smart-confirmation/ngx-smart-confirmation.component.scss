@@ -1,0 +1,17 @@
+button {
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background-color: transparent;
+  &:hover,
+  :focus-visible {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+.gap-z {
+  gap: 0;
+}
