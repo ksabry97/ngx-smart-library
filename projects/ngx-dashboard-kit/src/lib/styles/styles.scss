@@ -46,6 +46,16 @@ h2 {
   inset-inline-end: 2%;
   top: 10%;
 }
+.backbutton {
+  background-color: transparent;
+  color: #64748b;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    color: #2563eb;
+  }
+}
 // Responsive design
 @media (max-width: 768px) {
   .ngx-smart-input-container {

@@ -22,9 +22,12 @@ import {
   NgxSmartAlertComponent,
   NgxSmartConfirmationComponent,
   NgxSmartSpinnerComponent,
+  NgxSmartModalComponent,
+  ModalService,
 } from 'ngx-dashboard-kit';
 import { NgxSmartSearchComponent } from '../../../projects/ngx-dashboard-kit/src/lib/components/ngx-smart-search/ngx-smart-search.component';
 import { NgxSmartInputComponent } from '../../../projects/ngx-dashboard-kit/src/lib/components/ngx-smart-input/ngx-smart-input.component';
+import { AddFormComponent } from '../add-form/add-form.component';
 
 @Component({
   selector: 'app-banks',
@@ -46,6 +49,7 @@ import { NgxSmartInputComponent } from '../../../projects/ngx-dashboard-kit/src/
     NgxSmartAlertComponent,
     NgxSmartConfirmationComponent,
     NgxSmartSpinnerComponent,
+    NgxSmartModalComponent,
   ],
   templateUrl: './banks.component.html',
   styleUrls: ['./banks.component.scss'],
@@ -150,9 +154,12 @@ export class BanksComponent {
 
   testForm!: FormGroup;
   ageModel = 0;
+  addForm = AddFormComponent;
+  ismodalVisible: boolean = false;
   constructor(
     private readonly fb: FormBuilder,
-    private readonly msgServ: ToastMessages
+    private readonly msgServ: ToastMessages,
+    public readonly modalServ: ModalService
   ) {
     this.testForm = this.fb.group({
       name: ['', Validators.required],
@@ -162,8 +169,11 @@ export class BanksComponent {
       age: ['', Validators.required],
       file: [''],
     });
+    this.ismodalVisible = !this.modalServ.isModalClosed();
   }
-
+  showModal() {
+    this.modalServ.isModalClosed.set(false);
+  }
   submitForm() {
     // console.log(this.testForm.controls['name'].invalid, 'validation');
     // console.log(this.testForm.value, this.ageModel);

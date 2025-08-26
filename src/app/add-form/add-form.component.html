@@ -1,0 +1,36 @@
+<lib-ngx-smart-modal-header></lib-ngx-smart-modal-header>
+<form [formGroup]="testForm">
+  <lib-ngx-smart-input
+    label="name"
+    placeholder="Enter your age"
+    [showClear]="true"
+    [parentGroup]="testForm"
+    [controlName]="'name'"
+  ></lib-ngx-smart-input>
+  <lib-ngx-smart-password
+    label="password"
+    placeholder="Enter password"
+    [parentGroup]="testForm"
+    [controlName]="'password'"
+  >
+  </lib-ngx-smart-password>
+  <lib-ngx-smart-file-uploader
+    label="upload image"
+    [parentGroup]="testForm"
+    [controlName]="'file'"
+  ></lib-ngx-smart-file-uploader>
+  <lib-ngx-smart-date-picker
+    label="date"
+    placeholder="Enter your birthday"
+    [parentGroup]="testForm"
+    [controlName]="'date'"
+  ></lib-ngx-smart-date-picker>
+  <lib-ngx-smart-select
+    label="Gender"
+    placeholder="choose gender"
+    [parentGroup]="testForm"
+    [controlName]="'gender'"
+    [options]="genders"
+  ></lib-ngx-smart-select>
+</form>
+<lib-ngx-smart-modal-footer></lib-ngx-smart-modal-footer>

@@ -1,0 +1,14 @@
+<header>
+  <div class="headerStart">
+    <div class="headerIcon">
+      <i class="iconI" nz-icon [nzType]="icon" nzTheme="outline"></i>
+    </div>
+    <div class="headerText">
+      <div class="headerTitle">{{ title }}</div>
+      <div class="headerDescription">{{ description }}</div>
+    </div>
+  </div>
+  <button class="closePopup" (click)="close()">
+    <i class="xIcon" nz-icon nzType="close" nzTheme="outline"></i>
+  </button>
+</header>
