@@ -38,5 +38,13 @@
         <p>{{ isFolded ? "" : item.label }}</p>
       </li>
     </ul>
+    <div class="settings">
+      <i nz-icon nzType="setting" nzTheme="outline"> </i>
+      <p>{{ isFolded ? "" : "Settings" }}</p>
+    </div>
+    <div class="logout">
+      <i nz-icon nzType="logout" nzTheme="outline"> </i>
+      <p>{{ isFolded ? "" : "Logout" }}</p>
+    </div>
   </nav>
 </aside>

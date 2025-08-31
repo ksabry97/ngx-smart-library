@@ -54,6 +54,8 @@ aside {
       margin: 0;
       padding: 0 4px;
       width: 100%;
+      height: calc(100% - 150px);
+      overflow: auto;
     }
     li {
       color: #3f3f46;
@@ -87,6 +89,29 @@ aside {
   }
 }
 
+.settings,
+.logout {
+  display: flex !important;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  display: block;
+  padding: 0 4px;
+  p {
+    margin: 0;
+  }
+  i {
+    font-size: 14px;
+  }
+}
+.logout {
+  margin-top: 16px;
+  color: red;
+}
+.settings:hover {
+  cursor: pointer;
+  color: #6394ff;
+}
 // Responsive design
 @media (max-width: 1025px) {
   aside {
