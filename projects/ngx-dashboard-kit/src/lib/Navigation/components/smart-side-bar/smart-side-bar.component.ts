@@ -29,4 +29,9 @@ export class SmartSideBarComponent {
     this.router.navigateByUrl(item.route);
     this.activeRoute = item.route;
   }
+
+  logout() {
+    this.router.navigateByUrl('login');
+    localStorage.clear();
+  }
 }

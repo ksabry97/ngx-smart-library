@@ -17,6 +17,8 @@ export * from './lib/components/ngx-smart-modal-header';
 export * from './lib/components/ngx-smart-modal-footer';
 export * from './lib/Auth-Module/components/login-page';
 export * from './lib/Auth-Module/components/unathourized';
+export * from './lib/Auth-Module/components/page-not-found';
+export * from './lib/Auth-Module/components/server-down';
 export * from './lib/Navigation/components/smart-side-bar';
 export * from './lib/Feedback/ngx-smart-alert';
 export * from './lib/Feedback/ngx-smart-confirmation';

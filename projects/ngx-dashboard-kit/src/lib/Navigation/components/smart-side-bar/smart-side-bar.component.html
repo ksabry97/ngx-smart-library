@@ -33,6 +33,7 @@
       <li
         *ngFor="let item of menuItems"
         [ngClass]="{ active: activeRoute == item.route }"
+        (click)="setActive(item)"
       >
         <i nz-icon [nzType]="item.icon" nzTheme="outline"> </i>
         <p>{{ isFolded ? "" : item.label }}</p>
@@ -42,7 +43,7 @@
       <i nz-icon nzType="setting" nzTheme="outline"> </i>
       <p>{{ isFolded ? "" : "Settings" }}</p>
     </div>
-    <div class="logout">
+    <div class="logout" (click)="logout()">
       <i nz-icon nzType="logout" nzTheme="outline"> </i>
       <p>{{ isFolded ? "" : "Logout" }}</p>
     </div>

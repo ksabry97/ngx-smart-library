@@ -1,0 +1,36 @@
+<div class="custom-container">
+  <div class="box">
+    <div class="icon-box">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="text-red-600"
+        aria-hidden="true"
+      >
+        <path
+          d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+        ></path>
+        <path d="M12 9v4"></path>
+        <path d="M12 17h.01"></path>
+      </svg>
+    </div>
+    <h1>500</h1>
+    <h2>Server Error</h2>
+    <p>
+      Oops! Something went wrong on our end. We're working to fix this issue.
+      Please try again in a few moments.
+    </p>
+    <button class="primaryButton" (click)="reloadPage()">Try Again</button>
+    <button class="backbutton" (click)="back()">
+      <i nz-icon nzType="arrow-left" nzTheme="outline"></i>
+      Back
+    </button>
+  </div>
+</div>
