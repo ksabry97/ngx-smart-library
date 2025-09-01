@@ -7,7 +7,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
   standalone: true,
   imports: [CommonModule, NzIconModule],
   templateUrl: './server-down.component.html',
-  styleUrl: './server-down.component.css',
+  styleUrl: './server-down.component.scss',
 })
 export class ServerDownComponent {
   constructor(private readonly location: Location) {}

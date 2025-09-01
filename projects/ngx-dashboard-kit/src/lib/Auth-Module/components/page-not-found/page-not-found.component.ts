@@ -8,7 +8,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
   standalone: true,
   imports: [CommonModule, NzIconModule],
   templateUrl: './page-not-found.component.html',
-  styleUrl: './page-not-found.component.css',
+  styleUrl: './page-not-found.component.scss',
 })
 export class PageNotFoundComponent {
   constructor(
