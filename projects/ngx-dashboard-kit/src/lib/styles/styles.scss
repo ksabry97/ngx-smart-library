@@ -1,3 +1,19 @@
+:root {
+  --primary-bg: #ffffff;
+  --primary-text: #000000;
+  --primary-btn: #2f4cf4;
+}
+
+.dark-theme {
+  --primary-bg: #1e1e1e;
+  --primary-text: #ffffff;
+}
+
+body {
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+}
+
 p,
 h1,
 h2 {
@@ -74,7 +90,7 @@ h2 {
   height: 36px;
   font-size: 14px !important;
   color: #fff;
-  background-color: #2563eb;
+  background-color: var(--primary-btn);
   cursor: pointer;
   border-radius: 6px;
 }

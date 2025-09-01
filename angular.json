@@ -30,7 +30,10 @@
                 "output": "assets/ngx-dashboard-kit/"
               }
             ],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "src/styles.scss",
+              "node_modules/ngx-dashboard-kit/styles/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {

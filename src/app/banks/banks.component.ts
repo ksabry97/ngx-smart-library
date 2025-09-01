@@ -28,6 +28,7 @@ import {
 import { NgxSmartSearchComponent } from '../../../projects/ngx-dashboard-kit/src/lib/components/ngx-smart-search/ngx-smart-search.component';
 import { NgxSmartInputComponent } from '../../../projects/ngx-dashboard-kit/src/lib/components/ngx-smart-input/ngx-smart-input.component';
 import { AddFormComponent } from '../add-form/add-form.component';
+import { NgxSmartThemeSwitcherComponent } from '../../../projects/ngx-dashboard-kit/src/lib/components/ngx-smart-theme-switcher/ngx-smart-theme-switcher.component';
 
 @Component({
   selector: 'app-banks',
@@ -50,6 +51,7 @@ import { AddFormComponent } from '../add-form/add-form.component';
     NgxSmartConfirmationComponent,
     NgxSmartSpinnerComponent,
     NgxSmartModalComponent,
+    NgxSmartThemeSwitcherComponent,
   ],
   templateUrl: './banks.component.html',
   styleUrls: ['./banks.component.scss'],
@@ -191,4 +193,6 @@ export class BanksComponent {
     },
   ];
   submitSearch(event: string | any) {}
+
+  toggleTheme() {}
 }
