@@ -25,3 +25,4 @@ export * from './lib/Feedback/ngx-smart-confirmation';
 export * from './lib/Feedback/ngx-smart-spinner';
 export * from './lib/services/toast-messages.service';
 export * from './lib/services/modal.service';
+export * from './lib/services/theme-switcher.service';
