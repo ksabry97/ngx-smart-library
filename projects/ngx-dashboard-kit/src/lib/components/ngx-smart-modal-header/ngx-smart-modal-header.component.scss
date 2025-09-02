@@ -21,7 +21,7 @@ header {
 
       .iconI {
         font-size: 20px;
-        color: var(--blackColor);
+        color: var(--primary-text);
       }
     }
 
@@ -33,7 +33,7 @@ header {
       .headerTitle {
         font-size: 24px;
         font-weight: 700;
-        color: #fff;
+        color: var(--primary-text);
       }
 
       .headerDescription {
@@ -60,7 +60,7 @@ header {
 
     &:hover {
       .xIcon {
-        color: var(--redColor);
+        color: red;
       }
     }
   }
