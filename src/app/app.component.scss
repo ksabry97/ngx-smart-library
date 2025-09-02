@@ -5,7 +5,10 @@
   width: auto;
   overflow: auto;
 }
-
+lib-smart-side-bar {
+  display: flex;
+  align-items: center;
+}
 .metrics-row {
   display: flex;
   flex-direction: row;
