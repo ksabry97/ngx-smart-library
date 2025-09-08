@@ -66,7 +66,7 @@ export class AddFormComponent {
     },
   ];
   submitForm() {
-    // console.log(this.testForm.controls['name'].invalid, 'validation');
+    console.log(this.testForm.value);
     // console.log(this.testForm.value, this.ageModel);
     this.msgServ.createToastMsg('loading', 'hey', 1000);
   }

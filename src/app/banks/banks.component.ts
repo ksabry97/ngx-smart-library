@@ -112,8 +112,153 @@ export class BanksComponent {
       terminals: 12,
       country: 'UAE',
     },
+    {
+      id: 280119,
+      name: 'LightBoxV3Bank',
+      status: false,
+      scheme: 'Union Pay',
+      terminals: 12,
+      country: 'UAE',
+    },
+    {
+      id: 280119,
+      name: 'LightBoxV3Bank',
+      status: false,
+      scheme: 'Union Pay',
+      terminals: 12,
+      country: 'UAE',
+    },
+    {
+      id: 280119,
+      name: 'LightBoxV3Bank',
+      status: false,
+      scheme: 'Union Pay',
+      terminals: 12,
+      country: 'UAE',
+    },
+    {
+      id: 280119,
+      name: 'LightBoxV3Bank',
+      status: false,
+      scheme: 'Union Pay',
+      terminals: 12,
+      country: 'UAE',
+    },
+    {
+      id: 280119,
+      name: 'LightBoxV3Bank',
+      status: false,
+      scheme: 'Union Pay',
+      terminals: 12,
+      country: 'UAE',
+    },
+    {
+      id: 280119,
+      name: 'LightBoxV3Bank',
+      status: false,
+      scheme: 'Union Pay',
+      terminals: 12,
+      country: 'UAE',
+    },
+    {
+      id: 280119,
+      name: 'LightBoxV3Bank',
+      status: false,
+      scheme: 'Union Pay',
+      terminals: 12,
+      country: 'UAE',
+    },
+    {
+      id: 280119,
+      name: 'LightBoxV3Bank',
+      status: false,
+      scheme: 'Union Pay',
+      terminals: 12,
+      country: 'UAE',
+    },
+    {
+      id: 280119,
+      name: 'LightBoxV3Bank',
+      status: false,
+      scheme: 'Union Pay',
+      terminals: 12,
+      country: 'UAE',
+    },
+    {
+      id: 280119,
+      name: 'LightBoxV3Bank',
+      status: false,
+      scheme: 'Union Pay',
+      terminals: 12,
+      country: 'UAE',
+    },
+    {
+      id: 280119,
+      name: 'LightBoxV3Bank',
+      status: false,
+      scheme: 'Union Pay',
+      terminals: 12,
+      country: 'UAE',
+    },
+    {
+      id: 280119,
+      name: 'LightBoxV3Bank',
+      status: false,
+      scheme: 'Union Pay',
+      terminals: 12,
+      country: 'UAE',
+    },
+    {
+      id: 280119,
+      name: 'LightBoxV3Bank',
+      status: false,
+      scheme: 'Union Pay',
+      terminals: 12,
+      country: 'UAE',
+    },
+    {
+      id: 280119,
+      name: 'LightBoxV3Bank',
+      status: false,
+      scheme: 'Union Pay',
+      terminals: 12,
+      country: 'UAE',
+    },
+    {
+      id: 280119,
+      name: 'LightBoxV3Bank',
+      status: false,
+      scheme: 'Union Pay',
+      terminals: 12,
+      country: 'UAE',
+    },
+    {
+      id: 280119,
+      name: 'LightBoxV3Bank',
+      status: false,
+      scheme: 'Union Pay',
+      terminals: 12,
+      country: 'UAE',
+    },
+    {
+      id: 280119,
+      name: 'LightBoxV3Bank',
+      status: false,
+      scheme: 'Union Pay',
+      terminals: 12,
+      country: 'UAE',
+    },
+    {
+      id: 280119,
+      name: 'LightBoxV3Bank',
+      status: false,
+      scheme: 'Union Pay',
+      terminals: 12,
+      country: 'UAE',
+    },
   ];
 
+  filteredBanks: any[] = [];
   get activeBanksCount(): number {
     return this.banks.filter((b) => b.status === true).length;
   }
@@ -192,7 +337,15 @@ export class BanksComponent {
       value: '2',
     },
   ];
-  submitSearch(event: string | any) {}
+  submitSearch(event: string | any) {
+    if (event) {
+      this.filteredBanks = this.banks.filter((bank) => {
+        return bank.name
+          .toLocaleLowerCase()
+          .includes(event.toLocaleLowerCase());
+      });
+    } else this.filteredBanks = this.banks;
+  }
 
   toggleTheme() {}
 }

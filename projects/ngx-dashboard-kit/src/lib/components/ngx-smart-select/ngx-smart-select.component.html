@@ -3,20 +3,20 @@
     {{ label }}
   </label>
 
-  <form [formGroup]="parentGroup" class="input-wrapper">
-    <nz-select
-      [formControlName]="controlName"
-      [nzPlaceHolder]="placeholder"
-      [nzDisabled]="disabled"
-      [nzStatus]="control.touched && control.invalid ? 'error' : ''"
-      [nzMode]="mode"
-      [nzAllowClear]="allowClear"
-    >
-      @for (option of options; track $index) {
-      <nz-option [nzValue]="option.value" [nzLabel]="option.text"></nz-option>
-      }
-    </nz-select>
-  </form>
+  <nz-select
+    [nzPlaceHolder]="placeholder"
+    [nzDisabled]="disabled"
+    [nzStatus]="control.touched && control.invalid ? 'error' : ''"
+    [nzMode]="mode"
+    [(ngModel)]="value"
+    [nzAllowClear]="allowClear"
+    (ngModelChange)="onChange($event)"
+    (nzBlur)="touched()"
+  >
+    @for (option of options; track $index) {
+    <nz-option [nzValue]="option.value" [nzLabel]="option.text"></nz-option>
+    }
+  </nz-select>
 
   <!-- Error Message -->
   <div *ngIf="errorMessage" class="error-message">

@@ -63,14 +63,7 @@
     ></button>
   </div>
 
-  <lib-ngx-smart-table
-    [columns]="columns"
-    [data]="banks"
-    [actions]="actions"
-    [paginator]="true"
-    [rows]="10"
-    (onActionClick)="handleActionClick($event)"
-  ></lib-ngx-smart-table>
+  
 </div> -->
 <button nz-button [nzType]="'primary'" (click)="showModal()">
   <span>Show Clinc Modal</span>
@@ -100,3 +93,11 @@
 <lib-ngx-smart-theme-switcher
   [label]="'dark mode'"
 ></lib-ngx-smart-theme-switcher>
+<lib-ngx-smart-table
+  [columns]="columns"
+  [data]="filteredBanks"
+  [actions]="actions"
+  [paginator]="true"
+  [rows]="10"
+  (onActionClick)="handleActionClick($event)"
+></lib-ngx-smart-table>
