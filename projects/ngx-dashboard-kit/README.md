@@ -89,7 +89,7 @@ export class AppModule {}
 
 Each component is exported from the package root, and is a standalone Angular component with strong reactive-forms support where applicable.
 
-#### NgxSmartTable
+#### NgxSmartTable ([docs](src/lib/components/ngx-smart-table/README.md))
 
 Customizable data table with sorting hooks, client-side pagination, lazy loading signals, and row/action events. Built on `ng-zorro-antd/table`.
 
@@ -158,7 +158,7 @@ Customization:
 - **Theming**: override the component SCSS classes in your global styles.
 - **i18n**: provide localized column headers, action labels, and cell templates.
 
-#### NgxSmartInput
+#### NgxSmartInput ([docs](src/lib/components/ngx-smart-input/README.md))
 
 Form input with built-in error messaging via `ErrorMessages` service and first-class reactive-forms support.
 
@@ -208,7 +208,7 @@ Inputs:
 | parentGroup | `FormGroup` | — |
 | controlName | `string` | — |
 
-#### NgxSmartNumberInput
+#### NgxSmartNumberInput ([docs](src/lib/components/ngx-smart-number-input/README.md))
 
 Numeric input with validation helpers and reactive-forms integration.
 
@@ -237,7 +237,7 @@ form = this.fb.group({ amount: [null, [Validators.required]] });
 
 Inputs: same surface as `NgxSmartInput` plus numeric formatting can be applied via `pattern` as needed.
 
-#### NgxSmartDatePicker
+#### NgxSmartDatePicker ([docs](src/lib/components/ngx-smart-date-picker/README.md))
 
 Date (and range modes) picker built on `ng-zorro-antd/date-picker` with reactive-forms integration.
 
@@ -292,7 +292,7 @@ Inputs:
 | parentGroup | `FormGroup` | — |
 | controlName | `string` | — |
 
-#### NgxSmartFileUploader
+#### NgxSmartFileUploader ([docs](src/lib/components/ngx-smart-file-uploader/README.md))
 
 Drag-and-drop capable uploader powered by `ng-zorro-antd/upload`, with basic ControlValueAccessor implementation and form binding.
 
@@ -330,7 +330,7 @@ Inputs:
 | parentGroup | `FormGroup` | — |
 | controlName | `string` | — |
 
-#### NgxSmartSelect
+#### NgxSmartSelect ([docs](src/lib/components/ngx-smart-select/README.md))
 
 Select with single/multiple/tags modes on top of `ng-zorro-antd/select`.
 
@@ -374,7 +374,7 @@ Inputs:
 | parentGroup | `FormGroup` | — |
 | controlName | `string` | — |
 
-#### NgxSmartPassword
+#### NgxSmartPassword ([docs](src/lib/components/ngx-smart-password/README.md))
 
 Password input with toggle visibility and reactive-forms integration.
 
@@ -404,7 +404,13 @@ form = this.fb.group({ password: ['', [Validators.required]] });
 
 Inputs: same surface as `NgxSmartInput`.
 
-#### NgxSmartSearch
+#### NgxSmartSearch ([docs](src/lib/components/ngx-smart-search/README.md))
+
+#### NgxSmartModal ([docs](src/lib/components/ngx-smart-modal/README.md))
+
+#### NgxSmartModalHeader ([docs](src/lib/components/ngx-smart-modal-header/README.md))
+
+#### NgxSmartModalFooter ([docs](src/lib/components/ngx-smart-modal-footer/README.md))
 
 Lightweight debounced search input implementing ControlValueAccessor.
 
@@ -447,6 +453,15 @@ Events: two-way `ngModel`/form control via CVA; debounced valueChanges (~500ms).
   - Memoize heavy inputs and keep data immutable to reduce change detection.
   - Split features into standalone components and leverage route-level lazy loading.
 
+### Services
+
+- Core services: see `src/lib/services/README.md`.
+- Auth services: see `src/lib/Auth-Module/services/README.md`.
+
+### Extra Components
+
+- Feedback: `ngx-smart-alert`, `ngx-smart-confirmation`, `ngx-smart-spinner` (see their READMEs under `src/lib/Feedback`).
+- Navigation: `smart-side-bar` (see `src/lib/Navigation/components/smart-side-bar/README.md`).
 ### Contributing
 
 Contributions are welcome! To get started:
@@ -461,3 +476,4 @@ Please file bugs and feature requests under Issues.
 ### License
 
 MIT
+

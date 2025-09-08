@@ -1,10 +1,10 @@
 # NgxSmartTable Component
 
-A reusable, fully dynamic table component built with ng-zorro that supports customizable columns, actions, pagination, sorting, and loading states.
+A standalone, fully dynamic table component built with `ng-zorro-antd/table` that supports customizable columns, actions, pagination, sorting, and loading states.
 
 ## Features
 
-- ✅ **ng-zorro Integration** - Built on top of ng-zorro table component
+- ✅ **ng-zorro Integration** - Built on top of `ng-zorro-antd/table`
 - ✅ **Dynamic Columns** - Configurable columns with templates
 - ✅ **Custom Actions** - Action buttons for each row
 - ✅ **Pagination** - Built-in pagination with configurable page sizes
